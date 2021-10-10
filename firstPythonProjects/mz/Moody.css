@@ -1,0 +1,17 @@
+body{
+    background-color: dimgray;
+    border: gold;
+    font-family: sans-serif;
+    border-radius: 10%;
+}
+h1{
+   display: block;
+   border: 10px solid #2ecc71;
+   border-top-left-radius: 20px;
+   text-align: center;
+   caret-color: #ecf0f1;
+   background-color: #f1c40f
+
+
+
+}

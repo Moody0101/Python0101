@@ -1,0 +1,6 @@
+color = input("enter a color : ")
+plural_noun = input("enter a plural noun : ")
+someone_you_love = input("enter your lover\'s name : ")
+print("roses are " + color)
+print(plural_noun + " are blue ")
+print("I love " + someone_you_love)
