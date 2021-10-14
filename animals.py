@@ -3,8 +3,7 @@
 a really basic animals guessig game
 author: Moody0101
 language: python
-data: not specified.
-
+date: not specified.
 
 """
 

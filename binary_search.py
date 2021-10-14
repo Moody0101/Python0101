@@ -1,11 +1,9 @@
 from timeit import timeit
 
-v = [
-    2, 5, 4, 4, 7, 0, 8, 6
-]
-v.sort()
-
-
+"""
+My first binary search implementation.
+it does not look really clean, since it is only the first time implementing it.
+"""
 def bin(array: list, x) -> int:
     lo = 0
     hi = len(array)

@@ -79,6 +79,3 @@ class downloadData:
         createdir("downloads")
         with open(self.fileName, "+w") as f:
             f.write(self.req.content)
-
-
-# debugging

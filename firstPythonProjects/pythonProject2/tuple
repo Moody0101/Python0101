@@ -1,7 +1,0 @@
-
-ages = [40,50,70,79]
-ages.append(56)
-print(ages[4])
-ages.insert(2,3445645454656)
-print(ages[2])
-print(ages)

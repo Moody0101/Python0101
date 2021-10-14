@@ -4,7 +4,6 @@
 """
 from time import sleep
 
-
 class watcher:
     def __init__(self, watchedFile: str, outputFile: str):
         self.watchedFile = watchedFile

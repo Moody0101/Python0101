@@ -1,5 +1,11 @@
 from time import time
 
+"""
+a more clean and optamized implementation for my binary search prev code in this repo
+this one is more general and it covers how to use binary search with also letters.
+
+"""
+
 
 class binarySearch:
     def __init__(self, arr: list, data):
@@ -8,7 +14,7 @@ class binarySearch:
         self.high: int = len(self.arr)
         self.data = data
 
-    def search(self) -> list:
+    def intsearch(self) -> list:
         while self.low < self.high:
             middle = (self.low + self.high) // 2
             if self.arr[middle] < self.data:
@@ -16,7 +22,6 @@ class binarySearch:
             else:
                 self.high = middle
         return self.low
-
     @property
     def timing(self) -> str:
         t1: float = time()
