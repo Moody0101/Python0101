@@ -122,7 +122,7 @@ class organizer(fileList):
 if __name__ == '__main__':
     """print([i.name for  i in os.scandir("c://users/pc/documents/My projects/Moody_-")]
           )"""
-    x = fileList(path="c://users/pc/Documents/My projects/Moody_-/python/algorithmics and scripting")
+    x = fileList()
     pprint.pprint(x.walk())
     """
      it returns a map for the current dir if self.path not specified

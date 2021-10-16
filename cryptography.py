@@ -31,6 +31,8 @@ def tochar(i):
 	except Exception as e:
 		print("Not fount")
 		exit()
+
+
 class crypt:
 	"""a class to encrypt and decrypt data using string manipulation."""
 	
@@ -94,4 +96,4 @@ data00 = data.decrypt_00()
 with open("dataStrcuctues.py", "r") as f:
 	print([i for i in f.readlines()])
 	#encrypting the file
-	data2 = encrypt()
+	

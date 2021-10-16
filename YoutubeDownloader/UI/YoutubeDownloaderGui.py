@@ -2,6 +2,7 @@ import re
 from tkinter import LabelFrame, Label, Button, Tk, Entry
 import OppDownloader
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 # Author : Moody0101
 # version: 0.0.1
 # github: github.com/Moody0101
@@ -10,6 +11,7 @@ import OppDownloader
 # dependencies are  { pafy, youtube-dl, os, Tkinter}
 # to know how to use the YoutubeDownloader class you can go to this repo
 # www.github.com/Moody0101/youtubeDownloader
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 class YDL(Tk):
     searchButton: Button

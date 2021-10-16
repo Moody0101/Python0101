@@ -22,7 +22,7 @@ class node:
         return {
         'user': self.userName,
         'password': self.password
-}
+            }
     def __str__(self):
         return str(self.__dict__())
     def __repr(self):
@@ -44,12 +44,12 @@ class singlyLinkedList:
             current = current.Next
     def reverse(self):
         prev = None                         
-        current = self.head                
+        current = self.head             
         while current:
-            next = current.Next
+            Next = current.Next
             current.Next = prev
             prev = current
-            current = next
+            current = Next
         self.head = prev
     def push(self, data):
         new = node(Next=self.head, userName=self.size, password=data)
