@@ -47,12 +47,3 @@ class Queue:
 		return self.queue.copy()
 
 
-
-def main():
-	x = Queue([i for i in range(100)])
-	print(x)
-
-if __name__ == '__main__':
-	main()
-
-

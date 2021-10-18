@@ -1,7 +1,7 @@
 from pafy import new
 from time import time, sleep
 from pprint import pprint
-from os import path, mkdir, chdir
+from os import path, mkdir, chdir, system
 
 
 """ 
@@ -72,14 +72,14 @@ The main class
 
 
 url = input("  paste the Link : \t\t")
+
 res = youtubeDownloader(url)
-sleep(3)
+
 print("video Information: ")
 print(f"title ==> {res.stats['title']}\n "
       f"author ==> {res.stats['author']}")
 Format = int(input(" (0) ==> audio\n"
-                   " (1) ==> video\n"
-                   ))
+                   " (1) ==> video\n"))
 if Format == 0:
     """
       in case we are looking for an audio we would take a look at:

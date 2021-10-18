@@ -1,15 +1,10 @@
 
-
 """
 lib description:
 	Email => we only imported the EmailMessage to handle our whole email message with any messy code
 	smtplib => the lib that helps us login to our email server example: gmail, hotmail, yahoo....
 	os => commands and system stuff handler.
-	
-
 """
-
-
 from email.message import EmailMessage
 from os import environ 
 import smtplib
