@@ -4,7 +4,6 @@ you either specify the root or you specify the files path.
 when root is none then root = os.getcwd(), it also automatically outputs the files in the derictory
 and it can filter with the filter function (filter(ext: str)).
 note : this works with another module of mine that wraps up the getting file names operation(by inheritence btw).
-
 """
 import pprint
 import os
