@@ -29,6 +29,7 @@ class prototype:
         CompanyNames: list[str] = []
         Emails: list[str] = []
         }
+    note: clutch is using captcha, so m pretty much fucked up, so.. but I will try another sulotion.
 ------------------------------------------------------------------------------------------------------------
 """
 import requests as req
@@ -72,6 +73,4 @@ class _clutchwebSiteScrapper:
             return ["".join(i.split()) for i in self.companyNames1D]
     
     def run(self):
-        names = self.extractAllcompanyNames()
-        print((names, len(names)))
-    
+        print(self.extractAllcompanyNames())

@@ -187,7 +187,16 @@ class linkedlist:
         table = loads(open(file, "r").read())
         pprint(table)
     def reverse(self):
-        pass
+        current = self.root
+        prev = None
+        while current:
+            Next = current.Next # we save the next Node of current
+            current.Next = prev # we point the current Node to its previous, we revrse the pointer so to speak
+            prev = current # we shift the prev to current which is the node we a are setting on
+            current = Next # we shift the current to the next
+        self.root = prev 
+
+
 
 
 def main():
@@ -195,15 +204,9 @@ def main():
     # adding values to the left
     l.addLeft(1)
     l.addLeft(2)
-    l.addLeft(3)
-    l.addLeft(4)
-    # inserting values in index
-    l.insert("EXX", 3)  
-    # adding values to the end of the list using addRight
-    l.addRight(3)
-    # note: The linked list is dynamic, you can add nodes or values whatever you want.
     print(l)
-    l.store()
+    l.reverse()
+    print(l)
 def generateFakeData() -> list[node]:
     
     data = [
@@ -226,5 +229,5 @@ def main2():
     print(str(l))
 
 if __name__ == '__main__':
-    main2()
+    main()
 

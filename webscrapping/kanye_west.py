@@ -67,9 +67,6 @@ class kanye(Tk):
             print('network failed, make sure you have network connection')
             sleep(2)
             exit()
-
-    
-
 window = kanye()
 window.mainloop()
 

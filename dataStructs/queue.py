@@ -10,7 +10,6 @@ class Queue:
 	def __init__(self, items : list = []):
 		self.queue = deque()
 		self.items = items
-		
 		if len(self.items) > 0:
 			for _ in self.items:
 				self.pushRight(_)

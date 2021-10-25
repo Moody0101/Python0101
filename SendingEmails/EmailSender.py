@@ -8,10 +8,6 @@ lib description:
 from email.message import EmailMessage
 from os import environ 
 import smtplib
-# from multiprocessing import prp
-
-# if you wanna set your credentials in your machine go to the env variables 
-# so the script can grab them and keeps  them secure 
 
 class MessageSettingError(Exception):
 	pass
