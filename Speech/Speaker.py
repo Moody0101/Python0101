@@ -8,7 +8,7 @@ import pyttsx3
 
 def main():
     engine = pyttsx3.init()
-    text = "what is youn name so I can say it !: "
+    text = str(input("what is youn name so I can say it !: "))
     engine.say(text)
     engine.save_to_file(text, "audio.mp3")
     engine.runAndWait()

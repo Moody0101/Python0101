@@ -9,18 +9,30 @@ from email.message import EmailMessage
 from os import environ 
 import smtplib
 
+
+
 class MessageSettingError(Exception):
 	pass
+
 
 DEBUG_MODE = {
 	'port': 1025,
 	'server': "localhost:1025"
 }
 
+
+
 EMAIL_ADRESS = environ.get("EMAIL")
 PASSWORD = environ.get("PASSWORD")
 
+
 class EmailSender:
+	"""
+	note: if debug=True then you should go type this command before running the script to
+	debug:
+	python -m smtpd -c DebuggingServer -n localhost:1025
+	if you change the port in the command then you should change it in your script too.
+	"""
 	def __init__(self, 
 		address,
 		password,
@@ -48,6 +60,7 @@ class EmailSender:
 	subject: {self.msg['Subject']}
 	from: {self.address}
 	to: {self.msg['To']}
+		
 		"""
 	
 	
@@ -79,8 +92,8 @@ class EmailSender:
 				if self.msg['To'] is None and self.msg['Subject'] is None:
 					print("""
 	you have not set the message headers, Subject and to
-	you can use instance.setMessage(Subject, to, content)
-	""")		elif self.msg['To'] is None || is None self.msg['Subject']:
+	you can use instance.setMessage(Subject, to, content)""")
+				elif self.msg['To'] is None or self.msg['Subject'] is None :
 					print("check your setMessage() functions seems like you have not set important headers")
 				else:
 					raise messageSettingError("you have forgotten to set some important data in the setMessage function")
@@ -93,11 +106,8 @@ class EmailSender:
 def test():
 	email = EmailSender(EMAIL_ADRESS, PASSWORD,Debug=True) # constructing the instance, you can change the PORT and the agent tho
 	print(email)
-	email.setMessage('Hello', 'Mohamed@gmail.com', '')
+	email.setMessage('Hello', 'Mohamed@gmail.com', 'TEST...')
 	print(email)
 	
-	
-	
-
 if __name__ == '__main__':
 	test()
