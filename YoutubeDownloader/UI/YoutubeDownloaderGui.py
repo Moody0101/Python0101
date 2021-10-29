@@ -4,7 +4,7 @@ import OppDownloader
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 # Author : Moody0101
-# version: 0.0.1
+# version: 1
 # github: github.com/Moody0101
 # the Youtube downloader section
 # just be cause I could not import it, so it made me mad, so it is better to copy it and paste
