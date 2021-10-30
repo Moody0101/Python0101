@@ -10,7 +10,7 @@ import OppDownloader
 # just be cause I could not import it, so it made me mad, so it is better to copy it and paste
 # dependencies are  { pafy, youtube-dl, os, Tkinter}
 # to know how to use the YoutubeDownloader class you can go to this repo
-# www.github.com/Moody0101/youtubeDownloader
+# github.com/Moody0101/youtubeDownloader
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 class YDL(Tk):

@@ -37,7 +37,6 @@ class EmailSender:
 		address,
 		password,
 		msg: EmailMessage = EmailMessage(), PORT: int = 456,
-		agent: str = 'smtp.gmail.com', 
 		Debug: bool = False
 		) -> None:
 
@@ -45,18 +44,17 @@ class EmailSender:
 		self.password = password
 		self.PORT = PORT
 		self.msg = msg
-		self.agent = agent
+		self.Debug = Debug
 
-		if Debug == False:
+		if self.Debug == False:
 			pass
 		else:
 			self.PORT = DEBUG_MODE['port']
-			self.agent = DEBUG_MODE['server']
 	def __str__(self) -> str:
 		return f"""
 
 	Port: {self.PORT}
-	agent: {self.agent}
+	agent: smtp.gmail.com
 	subject: {self.msg['Subject']}
 	from: {self.address}
 	to: {self.msg['To']}
@@ -83,7 +81,7 @@ class EmailSender:
 			print(e)
 		return True
 	def send(self) -> bool:
-		with smtplib.SMTP_SSL(self.agent, self.PORT) as S:
+		with smtplib.SMTP_SSL('smtp.gmail.com', self.PORT) as S:
 			S.login(self.address, self.password)
 			try:
 				S.send_message(self.msg)
@@ -99,15 +97,3 @@ class EmailSender:
 					raise messageSettingError("you have forgotten to set some important data in the setMessage function")
 			 # Message was sent
 		return False # message was Not sent
-# test
-
-
-
-def test():
-	email = EmailSender(EMAIL_ADRESS, PASSWORD,Debug=True) # constructing the instance, you can change the PORT and the agent tho
-	print(email)
-	email.setMessage('Hello', 'Mohamed@gmail.com', 'TEST...')
-	print(email)
-	
-if __name__ == '__main__':
-	test()

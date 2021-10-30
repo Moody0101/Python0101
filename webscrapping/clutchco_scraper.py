@@ -39,9 +39,10 @@ from itertools import chain
 from dataclasses import dataclass
 
 class _clutchwebSiteScrapper:
-    def __init__(self, url: str='https://clutch.co/web-developers', n:int=1):
+    def __init__(self, url: str='https://clutch.co/web-developers', n:int=1, m:int=None):
         self.url = url
         self.n = n
+        self.m = m
         self.pageNumParameter: str ="?page="  
         self.EmailPrefixes = [
             'social', 'marketing', 'hello', 'contact', 'support', 'info', 'press',
@@ -63,7 +64,10 @@ class _clutchwebSiteScrapper:
             self.companyNames1D = [i.a.text for i in bs(self.scrap(), 'html.parser').find_all(class_="company_info")]
             self.is2D = False
         else:
-            self.companyNames2D = [[i.a.text for i in bs(self.scrap(f"{self.url}{self.pageNumParameter}{x}"), 'html.parser').find_all(class_="company_info")] for x in range(self.n)]
+            if self.m:
+                self.companyNames2D = [[i.a.text for i in bs(self.scrap(f"{self.url}{self.pageNumParameter}{x}"), 'html.parser').find_all(class_="company_info")] for x in range(self.n, self.m)]
+            else:
+                self.companyNames2D = [[i.a.text for i in bs(self.scrap(f"{self.url}{self.pageNumParameter}{x}"), 'html.parser').find_all(class_="company_info")] for x in range(self.n)]
             self.is2D = True
     def extractAllcompanyNames(self) -> list:
         
@@ -71,6 +75,19 @@ class _clutchwebSiteScrapper:
             return list(chain.from_iterable([["".join(i.split()) for i in x] for x in self.companyNames2D]))
         else:
             return ["".join(i.split()) for i in self.companyNames1D]
-    
     def run(self):
-        print(self.extractAllcompanyNames())
+        return self.extractAllcompanyNames()
+        
+
+
+
+
+scrap = _clutchwebSiteScrapper(n=201, m=300)
+name = scrap.run()
+
+for _ in name:
+    with open("Names.csv", "a") as f:
+        try:
+            f.write(f'{_}\n')
+        except:
+            pass

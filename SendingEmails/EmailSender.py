@@ -34,8 +34,8 @@ class EmailSender:
 		self.PORT = PORT
 		self.msg = msg
 		self.agent = agent
-
-		if Debug == False:
+		self.Debug = Debug
+		if self.Debug == False:
 			pass
 		else:
 			self.PORT = DEBUG_MODE['port']
