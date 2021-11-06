@@ -44,5 +44,3 @@ class Queue:
 		self.queue.rotate()
 	def copy(self):
 		return self.queue.copy()
-
-

@@ -125,5 +125,5 @@ if __name__ == '__main__':
     pprint.pprint(x.walk())
     """
      it returns a map for the current dir if self.path not specified
+    
     """
-

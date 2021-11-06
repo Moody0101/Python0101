@@ -12,7 +12,7 @@ class node:
     a node that contains:
         username
         password
-        nex_pointer
+        next_pointer
     """
     def __init__(self, userName: str, password, Next = None):
         self.password = password

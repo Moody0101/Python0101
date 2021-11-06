@@ -135,14 +135,6 @@ class linkedlist:
             prev = current
             current = current.Next
         return False
-    # def popLeft(self):
-    #     root = self.root
-    #     if root:
-    #         Next = root.Next
-    #         Next.Next = self.root
-    #         self.size -= 1
-    #     else:
-    #         print("empty list!")
     def insert(self, data,index):
         if index == 0:
             self.addLeft(data)
@@ -194,7 +186,7 @@ class linkedlist:
             current.Next = prev # we point the current Node to its previous, we revrse the pointer so to speak
             prev = current # we shift the prev to current which is the node we a are setting on
             current = Next # we shift the current to the next
-        self.root = prev 
+        self.root = prev
 
 
 
