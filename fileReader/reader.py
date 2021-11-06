@@ -1,13 +1,15 @@
 """
+
 GITHUBHOME = https://github.com
 a software to read files.
 author: Moody0101
 github: GITHUBHOME/Moody0101
+
 """
 
 
 from tkinter import Tk, Button, filedialog, Label, LabelFrame, Entry
-import pyttsx3 
+import pyttsx3
 import PyPDF2
 from gtts import gTTS
 from time import  sleep

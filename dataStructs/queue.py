@@ -18,7 +18,7 @@ class Queue:
 	def __str__(self):
 		return str(list(self.queue))
 	def __repr__(self):
-		return f"<< queue object >>"
+		return f"<<queue object>>"
 	def __list__(self):
 		return list(self.queue)		  
 	def pushLeft(self, data):
