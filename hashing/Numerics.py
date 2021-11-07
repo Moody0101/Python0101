@@ -1,5 +1,7 @@
 
 
+
+
 def b2tob10(a: str) -> int:
 
 	base = 0
@@ -11,6 +13,7 @@ def b2tob10(a: str) -> int:
 		else:
 			base += 1
 	return num
+
 
 def b10tob2(a: int) -> str:
 	binary = ""

@@ -36,7 +36,7 @@ class EmailSender:
 	def __init__(self, 
 		address,
 		password,
-		msg: EmailMessage = EmailMessage(), PORT: int = 456,
+		msg: EmailMessage = EmailMessage(), PORT: int = 465,
 		Debug: bool = False
 		) -> None:
 

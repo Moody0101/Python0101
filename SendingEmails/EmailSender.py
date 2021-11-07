@@ -24,7 +24,7 @@ class EmailSender:
 	def __init__(self, 
 		address,
 		password,
-		msg: EmailMessage = EmailMessage(), PORT: int = 456,
+		msg: EmailMessage = EmailMessage(), PORT: int = 465,
 		agent: str = 'smtp.gmail.com', 
 		Debug: bool = False
 		) -> None:
@@ -80,7 +80,8 @@ class EmailSender:
 					print("""
 	you have not set the message headers, Subject and to
 	you can use instance.setMessage(Subject, to, content)
-	""")		elif self.msg['To'] is None || is None self.msg['Subject']:
+	""")	
+				elif self.msg['To'] is None | self.msg['Subject'] is None:
 					print("check your setMessage() functions seems like you have not set important headers")
 				else:
 					raise messageSettingError("you have forgotten to set some important data in the setMessage function")
@@ -91,10 +92,10 @@ class EmailSender:
 
 
 def test():
-	email = EmailSender(EMAIL_ADRESS, PASSWORD,Debug=True) # constructing the instance, you can change the PORT and the agent tho
+	email = EmailSender(EMAIL_ADRESS, PASSWORD,Debug=False) # constructing the instance, you can change the PORT and the agent tho
 	print(email)
-	email.setMessage('Hello', 'Mohamed@gmail.com', '')
-	print(email)
+	email.setMessage('Hello', 'azmoudh@gmail.com', '')
+	email.send()
 	
 	
 	
