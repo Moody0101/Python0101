@@ -12,3 +12,6 @@ class _Qrmaker:
 			self.img.save(self.output, self.ext)
 		except:
 			print('something went wrong')
+
+if __name__ == '__main__':
+	pass
