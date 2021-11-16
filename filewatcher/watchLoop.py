@@ -1,6 +1,7 @@
 """
- as you might have seen, yep this file will watch the file1.txt and when it changes it will copy everything
- to file2.txt
+as you might have seen, yep this file
+will watch the file1.txt and when it changes it will copy everything
+to file2.txt
 """
 from time import sleep
 

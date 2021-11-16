@@ -75,8 +75,7 @@ class signIn:
 		return {
 		"user": self.userName,
 		"password": sha256(f"{self.password}".encode()).hexdigest()
-			}
+		}
 
-# signIn('Az123', '123Huaeeedcssd').sign()
+
 login('Az123', '123Huaeeedcssd')
-# print(algorithms_available)
