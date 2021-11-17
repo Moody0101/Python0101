@@ -1,18 +1,17 @@
-from math import pi, sin, radians
-from numpy import array
-import numpy
-import math
+"""
+Animation using the sin values and the module I made to help me using
+pygame to plot points in the x,y axiss
+"""
 
-PI = 90
 
-angels = [i*90 for i in range(10)]
-print(angels)
-def main():
-	sinVals = array([sin(radians(i)) for i in angels])
-	# print(sinVals[6])
-	x_axis = array([i for i in range(10)])
-	print([(x,y) for x,y in zip(x_axis, sinVals)])
 
-if __name__ == '__main__':
-	main()
-	print(sin(180))
+from math import sin
+from Graph import graphTrigPoints
+from random import choice
+from variables import white
+
+whitesmoke = (200, 200, 200)
+black = (19, 19, 19)
+BLUE = (0, 0, 100)
+
+graphTrigPoints(trig=sin, color=white)
