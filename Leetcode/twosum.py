@@ -1,5 +1,4 @@
 
-
 def twosum0(nums: list, target:int) -> list:
     table = {}
     for i, n in enumerate(nums):

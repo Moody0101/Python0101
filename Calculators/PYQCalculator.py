@@ -1,5 +1,5 @@
 import PyQt5.QtWidgets as QT
-
+print(dir(QT))
 
 class MainWindow(QT.QWidget):
     def __init__(self):
@@ -33,7 +33,7 @@ class MainWindow(QT.QWidget):
         container.setLayout(QT.QGridLayout())
         self.result = QT.QLineEdit()
         clear_button = QT.QPushButton('clear', clicked=lambda: self.clear())
-        enter_button = QT.QPushButton('Enter', clicked=lambda: self.r())
+        enter_button = QT.QPushButton('=', clicked=lambda: self.r())
         btt9 = QT.QPushButton('9', clicked=lambda: self.numPress('9'))
         btt8 = QT.QPushButton('8', clicked=lambda: self.numPress('8'))
         btt7 = QT.QPushButton('7', clicked=lambda: self.numPress('7'))
@@ -62,14 +62,12 @@ class MainWindow(QT.QWidget):
         container.layout().addWidget(btt5, 3, 1)
         container.layout().addWidget(btt4, 3, 2)
         container.layout().addWidget(subtraction, 3, 3)
-
         container.layout().addWidget(btt3, 4, 0)
         container.layout().addWidget(btt2, 4, 1)
         container.layout().addWidget(btt1, 4, 2)
         container.layout().addWidget(multi, 4, 3)
         container.layout().addWidget(btt0, 5, 0, 1, 3)
         container.layout().addWidget(devision, 5, 3)
-
         self.layout().addWidget(container)
 
 
