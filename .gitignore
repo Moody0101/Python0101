@@ -1,4 +1,5 @@
 venv
+*.webm
 *.mp3
 *.mp4
 *.csv
