@@ -9,7 +9,7 @@
 
 import pygame
 from math import sin, cos, tan, e, prod
-from Circles import PygameInitializer
+
 
 
 
@@ -24,7 +24,6 @@ class Graph:
 		self.Backgroundcolor = Backgroundcolor
 		self.window = pygame.display.set_mode((self.height, self.width))
 		self.window.fill(self.Backgroundcolor)
-		
 		self.run = True
 	def draw(self):
 		# 
@@ -50,28 +49,35 @@ class Graph:
 		'x': self.width/2,
 		'y': self.height/2,
 		}
-	def Plot(self, Func, Percision):
-		UNIT = 20
-		self.O = self.origin	
-		for i in [i*Percision for i in range(-100000, 100000)]:
+	def PlotF(self, Func, Percision, ZOOM=1):
+		ZOOM *= 30
+		self.O = self.origin
+		for i in [i*Percision for i in range(-1000000, 1000000)]:
 			try:
-				pygame.draw.circle(self.window, (150, 0, 0), ((self.O['x'] + i*UNIT), (self.O['y'] + (Func(i)*-1)*UNIT)), 1)
+				pygame.draw.circle(self.window, (150, 0, 0), ((self.O['x'] + i*ZOOM), (self.O['y'] + (Func(i)*-1)*ZOOM)), 1)
 			except Exception as e:
 				pass
-
+	def plot(self, x_axis: list, y_axis: list, ZOOM=1):
+		data = zip(x_axis, y_axis)
+		ZOOM *= 30
+		self.O = self.origin
+		for x, y in data:
+				pygame.draw.circle(self.window, (0, 0, 0), ((self.O['x'] + x *ZOOM), (self.O['y'] + y*ZOOM)), 5)
 def Function(x):
 	return x**2
 
 def division(x):
-	return 1/x
+	return 1/sin(x)
 
 def Euler(x):
 	return x**e
 
 
-print(prod([2, 3, 3]))
-graph = Graph(600, 600, (255, 255, 255))
-graph.Plot(prod, .001)
+
+
+graph = Graph(700, 700, (255, 255, 255))
+# graph.PlotF(division, .001, .1)
+graph.plot([i for i in range(10)], [i*.10 for i in range(10)])
 graph.run_()
 
 
