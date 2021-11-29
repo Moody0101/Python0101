@@ -27,7 +27,8 @@ class MainWindow(QT.QWidget):
     def r(self):
         result = eval(''.join(self.numbers))
         self.result.setText(str(result))
-
+    def hi(self):
+        print("hi")
     def keypad(self):
         container = QT.QWidget()
         container.setLayout(QT.QGridLayout())
@@ -43,7 +44,7 @@ class MainWindow(QT.QWidget):
         btt3 = QT.QPushButton('3', clicked=lambda: self.numPress('3'))
         btt2 = QT.QPushButton('2', clicked=lambda: self.numPress('2'))
         btt1 = QT.QPushButton('1', clicked=lambda: self.numPress('1'))
-        btt0 = QT.QPushButton('0', clicked=lambda: self.numPress('0'))
+        btt0 = QT.QPushButton('0', clicked=self.hi)
 
         addition = QT.QPushButton('+', clicked=lambda: self.funcPress('+'))
         multi = QT.QPushButton('*', clicked=lambda: self.funcPress('*'))
