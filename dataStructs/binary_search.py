@@ -20,6 +20,7 @@ def find(x=100, n=100_001):
     """
     jgjg
     """
+    
     arr = []
     for i in range(n):
         if i == 0:

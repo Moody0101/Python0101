@@ -1,21 +1,9 @@
-# Drowin x_axis
-		# 	    def line(
-		#     surface: Surface,
-		#     color: _ColorValue,
-		#     start_pos: _Coordinate,
-		#     end_pos: _Coordinate,
-		#     width: Optional[int] = 1,
-		# ) -> Rect: ...
-
 import pygame
 from math import sin, cos, tan, e, prod, atanh, sqrt
-
 from itertools import chain
 from random import choice
 
-
 white = [
-
 	(i, i, i) for i in range(250, 255)
 ]
 red = [
@@ -34,6 +22,8 @@ Green = [
 randomcolors = list(chain([
 	lightBlue + red + white	+ darkBlue
 ]))[0]
+
+
 class Graph:
 	clock = pygame.time.Clock()
 	pygame.init()
@@ -47,9 +37,6 @@ class Graph:
 		self.window.fill(self.Backgroundcolor)
 		self.run = True
 	def draw(self):
-		# 
-		# pygame.draw.line(self.window, (0, 0, 0), (0, self.height/2), (self.width, self.height/2)) # x
-		# pygame.draw.line(self.window, (0, 0, 0), (self.width/2, 0), (self.width/2, self.height)) # y
 		
 		pygame.display.update()
 	def run_(self, a, b, c):
@@ -105,7 +92,7 @@ class Graph:
 		ZOOM *= 30
 		self.O = self.origin
 		for x, y in data:
-				pygame.draw.circle(self.window, (0, 0, 0), ((self.O['x'] + x *ZOOM), (self.O['y'] + y*ZOOM)), 5*ZOOM)
+			pygame.draw.circle(self.window, (0, 0, 0), ((self.O['x'] + x *ZOOM), (self.O['y'] + y*ZOOM)), 5*ZOOM)
 def Function(x):
 	return x**2
 

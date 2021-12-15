@@ -1,16 +1,40 @@
-class Node:
-    def __init__(self, data, Left=None, right=None):
+ 
+"""
+
+Tree => data, left: Tree, right: Tree
+challenge: make a BST, with no toturials and no help.
+"""
+class TreeNode:
+    """ Node """
+    def __init__(self, data=None):
         self.data = data
-        self.Left = Left
-        self.right = right
-    def __repr(self):
-        return f"<{data} {self.Left} {self.right}/>"
+        self.left = None
+        self.right = None
     def __str__(self):
-        return str(self.data)
+        return f"{self.data}"
 
-class binTree:
-    def __init__(self):
+class BST:
+    """ Binary search tree """
+    def __init__(self) -> None:
         self.root = None
-
-    def add(self, data):
-        if 
+        self.size = 0
+    
+    def add(self, data) -> None:
+        if not self.root:
+            self.root = TreeNode(data, self.root)
+        else:
+            self._add(data)
+        self.size += 1
+    def _add(self, data, current):
+        if data < current.data:
+            if not current.left:
+                current.left = TreeNode(data)
+            else:
+                self._add(data, current.left)
+        elif data > current.data:
+            if  not current.right:
+                current.right = TreeNode(data)
+            else:
+                self._add(data, current.right)
+        else:
+            print("Already exist")

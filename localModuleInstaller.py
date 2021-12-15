@@ -12,7 +12,10 @@ if not specified this will be used as a defaul
 {RESET}
 
 """
-DEFAULTPATH = "C:\\Users\\pc\\AppData\\Local\\Programs\\Python\\Python39\\Lib\\site-packages"
+
+
+DEFAULTPATH = "C:\\Users\\pc\\AppData\\Local\\Programs\\Python\\Python310\\Lib\\site-packages"
+
 
 
 if len(argv) > 1:

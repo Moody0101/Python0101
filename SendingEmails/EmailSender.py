@@ -5,6 +5,8 @@ lib description:
 	smtplib => the lib that helps us login to our email server example: gmail, hotmail, yahoo....
 	os => commands and system stuff handler.
 """
+
+
 from email.message import EmailMessage
 from os import environ 
 import smtplib
@@ -23,7 +25,7 @@ PASSWORD = environ.get("PASSWORD")
 class EmailSender:
 	def __init__(self, 
 		address,
-		password,
+		password,()
 		msg: EmailMessage = EmailMessage(), PORT: int = 465,
 		agent: str = 'smtp.gmail.com', 
 		Debug: bool = False

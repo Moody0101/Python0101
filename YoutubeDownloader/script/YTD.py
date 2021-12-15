@@ -2,7 +2,7 @@ from pafy import new
 from time import time, sleep
 from pprint import pprint
 from os import path, mkdir, chdir, system
-
+from colorama import Fore
 
 """ 
     introduction : {
@@ -20,7 +20,24 @@ from os import path, mkdir, chdir, system
         also how downloadData works:
             {still working on it...}
 """
-
+# colors
+BLACK = Fore.BLACK
+BLUE = Fore.BLUE
+CYAN = Fore.CYAN
+GREEN = Fore.GREEN
+LIGHTBLACK_EX = Fore.LIGHTBLACK_EX
+LIGHTBLUE_EX = Fore.LIGHTBLUE_EX
+LIGHTCYAN_EX = Fore.LIGHTCYAN_EX
+LIGHTGREEN_EX = Fore.LIGHTGREEN_EX
+LIGHTMAGENTA_EX = Fore.LIGHTMAGENTA_EX
+LIGHTRED_EX = Fore.LIGHTRED_EX
+LIGHTWHITE_EX = Fore.LIGHTWHITE_EX
+LIGHTYELLOW_EX = Fore.LIGHTYELLOW_EX
+MAGENTA = Fore.MAGENTA
+RED = Fore.RED
+RESET = Fore.RESET
+WHITE = Fore.WHITE
+YELLOW = Fore.YELLOW
 
 def createdir(arg0: str):
     if not path.exists(arg0):
@@ -71,15 +88,18 @@ The main class
         self.getStreams[int(index)].download()
 
 
-url = input("  paste the Link : \t\t")
-
+url = input(f"{YELLOW}Video Link : ")
 res = youtubeDownloader(url)
-
-print("video Information: ")
-print(f"title ==> {res.stats['title']}\n "
-      f"author ==> {res.stats['author']}")
-Format = int(input(" (0) ==> audio\n"
-                   " (1) ==> video\n"))
+print(f"{YELLOW}video Information: ")
+print(f"""
+{YELLOW}title ==> {res.stats['title']}
+{MAGENTA}author ==> {res.stats['author']}
+""")
+Format = int(input(f"""
+{CYAN}
+(0) ==> audio
+(1) ==> video\n""")
+)
 if Format == 0:
     """
       in case we are looking for an audio we would take a look at:
@@ -89,8 +109,8 @@ if Format == 0:
       """
     filteredAudio = [i for i in res.getStreams if not str(i).startswith('video') and not str(i).startswith('normal')]
     for i, value in enumerate(filteredAudio):
-        print(f"\t{i}  {value} {int(value.get_filesize()) * 10 ** -6 // 1} MB")
-    index = int(input("  Choose a quality : ==> "))
+        print(f"{i} {value} {int(value.get_filesize()) * 10 ** -6 // 1} MB")
+    index = int(input("Choose a quality : ==> "))
     print("processing....")
     sleep(2)
     a = time()
@@ -100,7 +120,7 @@ if Format == 0:
 elif Format == 1:
     filteredVideo = [i for i in res.getStreams if not str(i).startswith('audio')]
     for i, value in enumerate(filteredVideo):
-        print(f"{i}  {value} {int(value.get_filesize()) * 10 ** -6 // 1} MB")
+        print(f"{i} {value} {int(value.get_filesize()) * 10 ** -6 // 1} MB")
     index = int(input("choose a quality : ==> "))
     print("processing..")
     sleep(2)
@@ -116,4 +136,4 @@ sleep(0.5)
 print("github: github.com/Moody0101")
 sleep(0.5)
 print("email : azmoudh@gmail.com")
-
+print(RESET)

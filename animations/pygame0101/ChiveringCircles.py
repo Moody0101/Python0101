@@ -1,6 +1,4 @@
-"""
-this module helps you draw cirlces in pygame.
-"""
+
 
 import pygame
 from random import choice, randint
@@ -21,8 +19,9 @@ class Circle(code):
         self.color = color
         self.radius = radius
         self.MovinFunction = MovinFunction
-        self.velocity = 1
+        self.velocity = 3
         self.Xdirection, self.Ydirection = 1, 1
+
         self.run_()
     
     def draw(self) -> None:
@@ -34,21 +33,21 @@ class Circle(code):
     def move(self):
         if not self.MovinFunction:
             
-            if self.x > 450:
+            if self.x > self.width - 10:
                 self.Xdirection *= -1
             
             if self.x < 5:
                 self.Xdirection *= -1
             
-            if self.y > 450:
+            if self.y > self.height - 10:
                 self.Ydirection *= -1
 
 
             if self.y < 5:
                 self.Ydirection *= -1
 
-            self.x += (self.velocity*self.Xdirection)*random.uniform()*randint(0, 2)
-            self.y += (self.velocity*self.Ydirection)*random.uniform()*randint(0, 3)
+            self.x += (self.velocity*self.Xdirection)*randint(0, 3)
+            self.y += (self.velocity*self.Ydirection)*randint(0, 3)
 
         else:
             self.x, self.y = self.MovinFunction(self.x, self.y)
@@ -65,9 +64,7 @@ class Circle(code):
             self.window.fill(self.Backgroundcolor)
             self.draw()
         pygame.quit()
-def Moving(x, y):
-    """suppose that sin(alpha) is the velocity and by mutiplying by a constant we increase the velocity of the circle. """
-    return x + sin(x)*3, y + sin(y)*3
+
 
 if __name__ == "__main__":
-    Circle(250, 250, (255, 255, 255), 20 ,Title="Circle", Backgroundcolor=(19, 19, 19))
+    Circle(randint(0, 1200), randint(0, 700), (0, 0, 0), 20 ,Title="Circle", Backgroundcolor=(255, 255, 255), width=1200, height=700)

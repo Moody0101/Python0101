@@ -24,6 +24,7 @@ for instance another constructor for a database that stroes usernames and passwr
     self.data => self.userName
     self.prop  => self.password
 I wish you understand.
+
 -----------------------------------------------------------------------------------------------------------------
 """
 from pprint import pprint
@@ -45,7 +46,6 @@ class node:
         self.prop = prop
         if self.prop is None:
             self.prop = choice(props)
-        
     def __str__(self):
         return f"({self.data})"
     def __dict__(self):
@@ -54,6 +54,8 @@ class node:
         "prop": self.prop,
         "next": self.Next.data
         }
+    def asJson(self) -> bytes:
+        return dumps(self.__dict__()).encode()
 
 
 @dataclass
