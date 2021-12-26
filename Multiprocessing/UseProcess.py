@@ -2,10 +2,7 @@
 Using Multiple processes in python
 """
 
-
-from multiprocessing import Process as pd
-
-
+from multiprocessing import Pool
 
 
 def main():

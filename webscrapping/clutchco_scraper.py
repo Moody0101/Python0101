@@ -82,7 +82,8 @@ class _clutchwebSiteScrapper:
 
 
 
-scrap = _clutchwebSiteScrapper(n=201, m=300)
+scrap = _clutchwebSiteScrapper(n=201, m=300) #900 40.000
+
 name = scrap.run()
 
 for _ in name:

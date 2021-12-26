@@ -2,6 +2,7 @@
 """
 the premise is that you can make a function without even worrying about
 the parenthesis. :)
+since functions are objects in python.
 """
 
 class f:

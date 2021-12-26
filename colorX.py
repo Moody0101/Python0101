@@ -1,6 +1,4 @@
-from colors import *
-import colors
-print(dir(colors))
+from colorama import Fore as f
 if __name__ == '__main__':
-	print(RED)
-	print(f"{BLACK} I Am black {YELLOW} and I am YELLOW {RESET}")
+	for c in [i for i in dir(f) if not i.startswith("__")]:
+		print(f"{f} I Am black {f.eval(c)} and I am YELLOW {f.RESET}")

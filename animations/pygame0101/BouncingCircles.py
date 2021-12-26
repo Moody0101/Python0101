@@ -1,8 +1,10 @@
 """
 this module helps you draw cirlces in pygame.
 """
+
+
 import pygame
-from random import choice, randint
+from random import choice, randint, uniform
 from BoilerPlate import code
 from math import sin
 from numpy import random
@@ -24,16 +26,18 @@ class circle:
 
     def move(self, w, h):
         print(self.x, self.y)
-        if self.x >= w - 50:
+        if self.x >= w - 100:
             self.Xdirection = -1
         elif self.x <= 50:
-            self.Xdirection = 1 
-        elif self.y >= h - 100:
-            self.Ydirection = -1 
-        elif self.y <= 10:
+            self.Xdirection = 1
+        if self.x >= h - 100:
+            self.Ydirection = -1
+        elif self.y <= 50:
             self.Ydirection = 1
-        self.x +=( self.velocity + randint(0, 5) )* (self.Xdirection)
-        self.y +=( self.velocity + randint(0, 5) ) * (self.Xdirection)
+        
+        self.y += self.Ydirection * self.velocity
+        self.x +=  self.velocity * self.Xdirection
+
 
 class BouncingCircles(code):
     """ A cirlce wrapper class that inherits from code. """
@@ -41,7 +45,7 @@ class BouncingCircles(code):
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         self.circles = [
-            circle(self.window, x, y, (255, 255, 255), 5) for x, y in zip([ i for i in range(1)], [ i for i in range(1)])
+            circle(self.window, x, y, (255, 255, 255), 5) for x, y in zip([ i for i in range(10)], [ i for i in range(10)])
         ]
         self.run_()
     def draw(self) -> None:
@@ -59,5 +63,6 @@ class BouncingCircles(code):
                 i.move(self.width, self.height)
             self.draw()
         pygame.quit()
+
 if __name__ == "__main__":
     BouncingCircles("Circle", (0, 0, 0), 1000, 700)
