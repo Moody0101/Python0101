@@ -10,6 +10,7 @@ from gtts import gTTS
 from time import  sleep
 
 class reader(Tk):
+
 	def __init__(self):
 		super().__init__()
 		# self.iconbitmap('./Logo.ico')

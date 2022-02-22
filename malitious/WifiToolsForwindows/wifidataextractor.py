@@ -24,5 +24,5 @@ class Scanner:
 			getpassword(ESSID)
 		else:
 			print(f"{F.RED}[!] {ESSID} Not found")
-
+Scanner()
 print(F.RESET)

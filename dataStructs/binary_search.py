@@ -4,15 +4,17 @@ from timeit import timeit
 My first binary search implementation.
 it does not look really clean, since it is only the first time implementing it.
 """
+
 def bin(array: list, x) -> int:
     lo = 0
     hi = len(array)
     while lo < hi:
         middle = (lo + hi) // 2
+
         if array[middle] < x:
             lo = middle + 1
         else:
-            hi = middle
+            hi = middle - 1
     return lo
 
 

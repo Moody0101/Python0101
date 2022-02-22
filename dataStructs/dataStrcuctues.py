@@ -1,5 +1,5 @@
 """
-my own data structures and algorithms file
+my first data structures and algorithms file
 * stacks
 * Queues
 * Maxheaps

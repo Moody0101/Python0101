@@ -14,6 +14,7 @@ class _Qrmaker:
 			self.img.save(self.output, self.ext)
 		except:
 			print('something went wrong')
+
 if __name__ == '__main__':
 	print(....__init__)
 	qrcodemessage = input(f"{ YELLOW } what would you like to make as qr code: {RESET}")

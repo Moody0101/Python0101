@@ -1,6 +1,7 @@
 from random import choice
 from colorama import Fore
 from time import sleep
+
 prefixes = [
 'social', 'marketing', 'hello', 'contact', 'support', 'info', 'press',
 'media', 'team', 'sales', 'enquiries', 'help', 'business', 'service',

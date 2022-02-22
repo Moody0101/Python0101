@@ -46,14 +46,17 @@ class node:
         self.prop = prop
         if self.prop is None:
             self.prop = choice(props)
+
     def __str__(self):
         return f"({self.data})"
+
     def __dict__(self):
         return {
         "data": self.data,
         "prop": self.prop,
         "next": self.Next.data
         }
+
     def asJson(self) -> bytes:
         return dumps(self.__dict__()).encode()
 
@@ -68,13 +71,17 @@ class linkedlist:
         while current:
             yield current
             current = current.Next
+
     def __str__(self):
         self.nodes = [str(i) for i in self.__iter__()]
         return " => ".join(self.nodes)
+
     def __len__(self):
         return self.size
+
     def __list__(self):
         return self.nodes 
+
     def __getitem__(self, index):
         
         return self.nodes[index]
@@ -92,6 +99,7 @@ class linkedlist:
             for _ in data:
                 self.addLeft(_)
                 self.size += 1
+
     def addRight(self, data):
         if isinstance(data, list):
             for _ in data:
@@ -122,6 +130,7 @@ class linkedlist:
             self.size -= 1
             return True
         return False
+
     def pop(self):
         prev = None
         current = self.root
@@ -137,6 +146,7 @@ class linkedlist:
             prev = current
             current = current.Next
         return False
+
     def insert(self, data,index):
         if index == 0:
             self.addLeft(data)
@@ -164,6 +174,7 @@ class linkedlist:
                 self.size += 1
             except:
                 pass
+
     def store(self, file: str = "Data.json"):
         current = self.root
         if current == None:
@@ -175,11 +186,13 @@ class linkedlist:
         open(file, "w").write(dumps(table, indent=4))
         print("data dumped")
         return True
+
     def getData(self, file=None):
         if not file:
             file = "Data.json"
         table = loads(open(file, "r").read())
         pprint(table)
+
     def reverse(self):
         current = self.root
         prev = None

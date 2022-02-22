@@ -63,8 +63,6 @@ class webSiteScrapper:
 pageNum = 3
 url = "https://clutch.co/web-developers"
 
-
-
 content = webSiteScrapper(url, pageNum) # returns html of all the pages that was specified
 
 # you can pass it then to parser (beautifulsoup(content, 'html.parser')) or loop thro it.

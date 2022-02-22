@@ -4,6 +4,7 @@ from os import path, mkdir, chdir
 from sys import exit
 from tkinter import Tk, Button, Label
 from time import sleep
+
 """
 still  working on it..
 """
@@ -48,8 +49,7 @@ class kanye(Tk):
             mkdir('./download')
             chdir('./download')
         else:
-            chdir('./download')
-        
+            chdir('./download') 
         try:
             url0 = "http://productoilicito2.blogspot.com/2017/06/kanye-west-discografia-mediafire-2001.html"
             for _ in BeautifulSoup(getContent(url0), 'html.parser').findAll('a'):
@@ -60,7 +60,7 @@ class kanye(Tk):
                     file1 = getContent(file0.get("href"))
                     with open(f'{name}.7z', 'wb+') as f:
                         f.write(file1)
-                    name +=
+                    name += 1
             int("done")
             exit()
         except
